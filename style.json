@@ -1,0 +1,25 @@
+{
+	"QMainWindow":[
+		{
+			"tittle":"Eletromiografia",
+			"frameless": true,
+			"transluscentBg": false,
+            "sizeGrip": "sizeGrip",
+			"navigation":[
+				{
+					"minimize":"btnMinimize",
+					"close": "btnClose",
+					"restore":[
+						{	
+							"buttonName": "btnRestore",
+							"normalIcon": ":/icons/icons/square.svg",
+							"maximizedIcon": ":/icons/icons/copy.svg"
+						}
+					],
+					"moveWindow": "headerConteiner",
+					"tittleBar": "headerConteiner"
+				}
+			]
+		}
+	]
+}

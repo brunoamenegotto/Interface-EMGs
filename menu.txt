@@ -1,0 +1,26 @@
+"QCustomSlideMenu": [{
+		"name": "leftContainer",
+		"defaultSize": [{
+			"width": 0,
+			"height": "auto"
+		}],
+		"collapsedSize": [{
+			"width": 0,
+			"height": "auto"
+		}],
+		"expandedSize": [{
+			"width": 150,
+			"height": "auto"
+		}],
+		"toggleButton": [{
+			"buttonName": "btnMenu",
+			"icons": [{
+				"whenMenuIsCollapsed": ":/icons/icons/align-center.svg",
+				"whenMenuIsExpanded": ":/icons/icons/arrow-left.svg"
+			}]
+		}],
+		"menuTransitionAnimation": [{
+			"animationDuration": 500,
+			"animationEasingCurve": "Linear"
+		}]
+	}]

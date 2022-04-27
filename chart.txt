@@ -1,0 +1,58 @@
+self.seriesChart = QtCharts.QLineSeries()
+        self.chart = QtCharts.QChart()
+
+        self.chart.addSeries(self.seriesChart)
+        self.chart.createDefaultAxes()
+        self.chart.setAnimationOptions(QtCharts.QChart.SeriesAnimations)
+        self.chart.legend().setVisible(True)
+        self.chart.legend().setAlignment(Qt.AlignBottom)
+
+        self.axisX = QtCharts.QValueAxis()
+        self.axisY = QtCharts.QValueAxis()
+
+        self.chart.setTitle("Sinais de Eletromiografia")
+        self.seriesChart.setName("Sinal")
+        self.ui.bodyContent = QtCharts.QChartView(self.chart)
+        self.ui.bodyContent.setRenderHint(QPainter.Antialiasing)
+        self.ui.bodyContent.chart().setTheme(QtCharts.QChart.ChartThemeDark)
+
+        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy.setHeightForWidth(self.ui.bodyContent.sizePolicy().hasHeightForWidth())
+        self.ui.bodyContent.setSizePolicy(sizePolicy)
+
+        self.ui.bodyContent.setMinimumSize(QSize(0, 300))
+        self.ui.lineChartCont.addWidget(self.ui.bodyContent)
+        self.ui.chartView.setStyleSheet(u"background-color: transparent")
+
+        self.axisX.setRange(0, sampleCount)
+        self.axisX.setTitleText("Tempo(s)")
+        self.axisY.setRange(0, 1500)
+        self.axisY.setTitleText("Tensão(V)")
+
+        self.chart.setAxisX(self.axisX, self.seriesChart)
+        self.chart.setAxisY(self.axisY, self.seriesChart)
+
+        self.buffer = [QPointF(x, 0) for x in range(sampleCount)]
+        #self.seriesChart.append(self.buffer)
+
+
+
+
+
+self.startTime = time()
+        self.timePoints = []
+        self.yData = []
+        self.yRange = [0, 3.3]
+        self.viewTime = 1 #Segundos para a atualização dos dados
+        self.duration = 20 #Total de segundos da coleta dos dados
+
+run = True
+            while run:
+                self.data = self.serialCommunication.serialInst.readline().decode('utf-8').rstrip("\n")
+                try:
+                    self.timePoints.append(time() - self.startTime)
+                    currentTime = self.timePoints[-1]
+                    
+                    if self.timePoints[-1] > self.duration: run = False
+                
+                except: pas

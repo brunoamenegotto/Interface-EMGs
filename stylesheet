@@ -1,0 +1,18 @@
+#leftMenuSubContainer QPushButton{
+    text-align: left;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #838EA2;
+}
+#headerButtons QPushButton{
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #838EA2;
+}
+#headerMenu QPushButton{
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #838EA2;
+}
